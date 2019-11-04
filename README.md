@@ -19,4 +19,30 @@ Planning
 ----------
 ### Definition of the problem
 
+Design
+----------
+
+
+
+
+
+Development
+----------
+
+
+
+
+
+
+Evaluation
+----------
+
+
+
+
+
+Improvements
+----------
+
+
 
