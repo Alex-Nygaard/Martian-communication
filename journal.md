@@ -28,3 +28,38 @@ As most programming languages, bash and the arduino (C) programming languages ha
 
 **In conclusion**, both these languages have many strong and weak sides. And frankly, it is qutie hard to compare because they serve different purposes, with bash being a shell environment and C being a common and widespread programming language. Both function very well for their intended tasks, given that the programmer overcomes the learning barrier in regards to the syntax required. If I was to recommend one language to learn, it would definitely be C because of its widespread use, in addition to the great experience you gain that is easily applied to other computational languages and tasks.
 
+Wed. 11. Nov
+------------------
+### Tasks done
+* Buildt a trafic light with the arduino
+
+### To-do
+* Learn about C variables
+* Research binary theory
+
+### What did i learn
+* Wiring and mechanical engineering
+* Uploading and configuring the arduino
+
+### Questions
+* None
+
+Wed. 13. Nov
+------------------
+### Tasks done
+* Created a binary counter for the arduino
+
+### To-do
+* Build a binary counter with the arduino
+
+### What did i learn
+* Binary theory
+* How to convert integers to binary with C
+
+### Questions
+* None
+
+
+
+
+
