@@ -28,10 +28,10 @@ As most programming languages, bash and the arduino (C) programming languages ha
 
 **In conclusion**, both these languages have many strong and weak sides. And frankly, it is qutie hard to compare because they serve different purposes, with bash being a shell environment and C being a common and widespread programming language. Both function very well for their intended tasks, given that the programmer overcomes the learning barrier in regards to the syntax required. If I was to recommend one language to learn, it would definitely be C because of its widespread use, in addition to the great experience you gain that is easily applied to other computational languages and tasks.
 
-Wed. 11. Nov
+Mon. 11. Nov
 ------------------
 ### Tasks done
-* Buildt a trafic light with the arduino
+* Buildt a trafic light with the arduino (see picture below)
 
 ### To-do
 * Learn about C variables
@@ -44,13 +44,81 @@ Wed. 11. Nov
 ### Questions
 * None
 
+Traffic light w/ arduino:
+![trafficLight](trafficLightArduino.jpeg)
+
 Wed. 13. Nov
 ------------------
 ### Tasks done
-* Created a binary counter for the arduino
+* Created a binary counter for the arduino. The code used was as follows:
+```.c
+// Ports for the different LEDs
+// Counted from the right -> left
+int led5 = 13;
+int led4 = 12;
+int led3 = 11;
+int led2 = 10;
+int led1 = 9;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+int i = 1;
+
+void loop()
+{
+  for (i=1; i<=31; i++) {
+    Serial.print("Num: ");
+    Serial.println(i);
+    
+    // Condition for the first led
+    if (i % 2 != 0) {
+      digitalWrite(led1, HIGH);
+    }
+    // Condition for the second led
+    if (i % 4 > 1) {
+      digitalWrite(led2, HIGH);
+    }
+    // Condition for the third led
+    if (i % 8 > 3) {
+      digitalWrite(led3, HIGH);
+    }
+    // Condition for the fourth led
+    if (i % 16 > 7) {
+      digitalWrite(led4, HIGH);
+    }
+    // Condition for the fifth led
+    if (i % 32 > 15) {
+      digitalWrite(led5, HIGH);
+    }
+    
+    // Resets everything
+    delay(1000);
+    digitalWrite(led1, LOW);
+    digitalWrite(led2, LOW);
+    digitalWrite(led3, LOW);
+    digitalWrite(led4, LOW);
+    digitalWrite(led5, LOW);
+    delay(300);
+    
+  }
+  // Delay 3 sec before next counting
+  delay(3000);
+}
+```
+The wiring of the arduino for this problem is as follows:
+![wiringBinaryCounter](wiringBinaryCounter.png)
+
 
 ### To-do
-* Build a binary counter with the arduino
+* Build a binary counter with the physical arduino
 
 ### What did i learn
 * Binary theory
