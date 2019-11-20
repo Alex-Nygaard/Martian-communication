@@ -128,6 +128,74 @@ The wiring of the arduino for this problem is as follows:
 * None
 
 
+Tue. 19. Nov
+------------------
+### Tasks done
+* Practiced and learned about logic gates
+* Greated an expression for various tables of binary inputs and outputs
+
+### To-do
+* Using logic gates to simplify the homework task (converting a table into light outputs)
+* Create a visual representation of binary numbers with a 7-segment display
+
+### What did i learn
+* Theory of logic gates
+* Practical use of logic gates
+* Drawing diagrams for logic gates
+
+### Questions
+* None
 
 
+Wed. 20. Nov
+------------------
+### Tasks done
+* Practiced drawing diagrams for 
+* Created table for 7-segment number display, both inputs and outputs
+* Created a 7-segment display (7 lights for now) on tinkercad
+
+Examples of the code (including logic gates) to controll the output are:
+```.c
+// Define the input from the buttons as simple variables
+A = digitalRead(butA);
+B = digitalRead(butB);
+C = digitalRead(butC);
+
+// Light A
+if (B || (C && A) || (!C && !A) ) {
+  digitalWrite(outA, HIGH);
+} else {
+  digitalWrite(outA, LOW);
+}
+
+// Light B
+if (!A || (!B && !C) || (C && B)) {
+  digitalWrite(outB, HIGH);
+} else {
+  digitalWrite(outB, LOW);
+}
+
+// Light C
+if (C || (!C && !B) || (A && B)) {
+  digitalWrite(outC, HIGH);
+} else {
+  digitalWrite(outC, LOW);
+}
+```
+
+This pattern continues for all 7 lights. Full code on my tinkercad under the project name "Counting with binary using 7 segment display".
+
+Below is the logic i used to both find the tables for the inputs/outputs, but also the K-map tables:
+![SevenSegmentDisplayDiagram](sevenSegmentDisplay.jpg)
+
+
+### To-do
+* Build a real 7-segment display with arduino
+
+### What did i learn
+* More practically how to apply logic gates in code
+* Creating equations of inputs using logic gates (creating K-map tables)
+
+### Questions
+* None
 
