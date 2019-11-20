@@ -63,7 +63,18 @@ Each digit is referred to as a *bit*.
 * Using 4 bits, you can display 16 numbers (0-15)
 And so forth...
 
-#### With from decimal to binary
+**To convert a number from binary to decimal, one must follow the steps described below:**
+1. Write down the binary number
+1. Multiply the LSB (Least significant bit - furthest to the right) with 2 to the power of the position number (meaning first bit = 2^1, second bit = 2^2, third bit 2^3 etc.)
+1. Continue doing step 2 until reaching the MSB (most significant bit)
+1. Add all these results together to find the decimal result
+
+
+**To convert a number from decimal to binary, the flowchart below must be used:**
+![flowchartDecToBin](decimalToBinaryFlowchart.jpg)
+
+
+#### Counting to 31, with decimal input to binary output
 The code below shows how one could code from 0 to 31 with binary. The output (binary) is represented as lights either being on or off.
 ```.c
 // Ports for the different LEDs
