@@ -199,3 +199,23 @@ Below is the logic i used to both find the tables for the inputs/outputs, but al
 ### Questions
 * None
 
+
+Thu. 21. Nov
+------------------
+### Tasks done
+* Buildt a 7 segment display with arduino:
+![built7SegmentDisplay](built7SegmentDisplay.jpeg)
+![wiring7Segment](wiring7segment.jpeg)
+
+### To-do
+* Troubleshoot an error in the code, resulting in wrong output for the number 7.
+* Fix and sort out the wiring system
+
+### What did i learn
+* Wiring techinques and practice
+* Why cable management is important (as can be seen on the image, it became really chaotic)
+
+### Questions
+* None
+
+
