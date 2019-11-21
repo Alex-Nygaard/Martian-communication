@@ -142,6 +142,73 @@ The wiring for this problem is:
 ![WiringBinaryCounter](wiringBinaryCounter.png)
 
 
+#### Visualising binary numbers with 7-segment display
+Using a 7-segment display, it is much easier to understand and interpret a binary number or input.
+The 7-segment display is essentially 7 separate LEDs which when combinated in specific ways create the illusion of decimal numbers. More can be read on https://en.wikipedia.org/wiki/Seven-segment_display
+
+To create a 7 segment display:
+Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See the image below for further details.
+![sevenSegmentDisplay](sevenSegmentDisplay.jpg)
+
+The code for the 7 segment display is as follows.
+```.c
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int outA = 2;
+int outB = 3;
+int outC = 4;
+int outD = 5;
+int outE = 6;
+int outF = 7;
+int outG = 8;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(butA, INPUT);
+  pinMode(butB, INPUT);
+  pinMode(butC, INPUT);
+  pinMode(outA, OUTPUT);
+  pinMode(outB, OUTPUT);
+  pinMode(outC, OUTPUT);
+  pinMode(outD, OUTPUT);
+  pinMode(outE, OUTPUT);
+  pinMode(outF, OUTPUT);
+  pinMode(outG, OUTPUT);
+}
+
+bool A = 0;
+bool B = 0;
+bool C = 0;
+
+void loop()
+{
+  // Define the input as simpler variables
+  A = digitalRead(butA);
+  B = digitalRead(butB);
+  C = digitalRead(butC);
+  
+  // Light A
+  digitalWrite(outA, B || (C && A) || (!C && !A));
+  // Light B
+  digitalWrite(outB, !A || (!B && !C) || (C && B));
+  // Light C
+  digitalWrite(outC, C || (!C && !B) || (A && B));
+  // Light D
+  digitalWrite(outD, (!C && !A) || (B && !C) || (B && !A) || (A && C && !B));
+  // Light E
+  digitalWrite(outE, (!A && !C) || (B && !C));
+  // Light F
+  digitalWrite(outF, (A && !B) || (A && !C) || (!C && !B));
+  // Light G
+  digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
+}
+```
+
+The logical equations were found using the K-map tables. The first 3 tables are shown in the picture above.
+
+
 Evaluation
 ----------
 
