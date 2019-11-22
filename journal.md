@@ -51,70 +51,30 @@ Wed. 13. Nov
 ------------------
 ### Tasks done
 * Created a binary counter for the arduino. The code used was as follows:
-```.c
-// Ports for the different LEDs
-// Counted from the right -> left
-int led5 = 13;
-int led4 = 12;
-int led3 = 11;
-int led2 = 10;
-int led1 = 9;
-
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
+```.c 
+// Condition for the first led
+if (i % 2 != 0) {
+  digitalWrite(led1, HIGH);
 }
-
-int i = 1;
-
-void loop()
-{
-  for (i=1; i<=31; i++) {
-    Serial.print("Num: ");
-    Serial.println(i);
-    
-    // Condition for the first led
-    if (i % 2 != 0) {
-      digitalWrite(led1, HIGH);
-    }
-    // Condition for the second led
-    if (i % 4 > 1) {
-      digitalWrite(led2, HIGH);
-    }
-    // Condition for the third led
-    if (i % 8 > 3) {
-      digitalWrite(led3, HIGH);
-    }
-    // Condition for the fourth led
-    if (i % 16 > 7) {
-      digitalWrite(led4, HIGH);
-    }
-    // Condition for the fifth led
-    if (i % 32 > 15) {
-      digitalWrite(led5, HIGH);
-    }
-    
-    // Resets everything
-    delay(1000);
-    digitalWrite(led1, LOW);
-    digitalWrite(led2, LOW);
-    digitalWrite(led3, LOW);
-    digitalWrite(led4, LOW);
-    digitalWrite(led5, LOW);
-    delay(300);
-    
-  }
-  // Delay 3 sec before next counting
-  delay(3000);
+// Condition for the second led
+if (i % 4 > 1) {
+  digitalWrite(led2, HIGH);
+}
+// Condition for the third led
+if (i % 8 > 3) {
+  digitalWrite(led3, HIGH);
+}
+// Condition for the fourth led
+if (i % 16 > 7) {
+  digitalWrite(led4, HIGH);
+}
+// Condition for the fifth led
+if (i % 32 > 15) {
+  digitalWrite(led5, HIGH);
 }
 ```
-The wiring of the arduino for this problem is as follows:
-![wiringBinaryCounter](wiringBinaryCounter.png)
+The important part here is how the output is decided, as can be seen in the conditionals in the if-statements. It is decided based on the remainder of the power of 2 after dividing by a specific value. For example:
+
 
 
 ### To-do
