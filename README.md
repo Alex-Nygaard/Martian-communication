@@ -75,72 +75,35 @@ And so forth...
 
 
 #### Counting to 31, with decimal input to binary output
-The code below shows how one could code from 0 to 31 with binary. The output (binary) is represented as lights either being on or off.
+The code below shows the conditional statements required to count from 0 to 31 with binary. The output (binary) is represented as lights either being on or off. The conditions are based on the concept of the base-2 binary counting system. 
+
+If the remainder of the number divided by 2^1 is 1, the first light is on (the number is odd).
+If the remainder of the number divided by 2^2 is greater than one ((2^2)/2 - 1), the second light is on.
+If the remainder of the number divided by 2^3 is greater than 4 ((2^3)/2 - 1), the third light is on.
+And so forth:
+
 ```.c
-// Ports for the different LEDs
-// Led nr. counted from the right -> left
-int led5 = 13;
-int led4 = 12;
-int led3 = 11;
-int led2 = 10;
-int led1 = 9;
-
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
+// Condition for the first led
+if (i % 2 != 0) {
+  digitalWrite(led1, HIGH);
 }
-
-int i = 1;
-
-void loop()
-{
-  for (i=1; i<=31; i++) {
-    Serial.print("Num: ");
-    Serial.println(i);
-    
-    // Condition for the first led
-    if (i % 2 != 0) {
-      digitalWrite(led1, HIGH);
-    }
-    // Condition for the second led
-    if (i % 4 > 1) {
-      digitalWrite(led2, HIGH);
-    }
-    // Condition for the third led
-    if (i % 8 > 3) {
-      digitalWrite(led3, HIGH);
-    }
-    // Condition for the fourth led
-    if (i % 16 > 7) {
-      digitalWrite(led4, HIGH);
-    }
-    // Condition for the fifth led
-    if (i % 32 > 15) {
-      digitalWrite(led5, HIGH);
-    }
-    
-    // Resets everything
-    delay(1000);
-    digitalWrite(led1, LOW);
-    digitalWrite(led2, LOW);
-    digitalWrite(led3, LOW);
-    digitalWrite(led4, LOW);
-    digitalWrite(led5, LOW);
-    delay(300);
-    
-  }
-  // Delay 3 sec before next counting
-  delay(3000);
+// Condition for the second led
+if (i % 4 > 1) {
+  digitalWrite(led2, HIGH);
+}
+// Condition for the third led
+if (i % 8 > 3) {
+  digitalWrite(led3, HIGH);
+}
+// Condition for the fourth led
+if (i % 16 > 7) {
+  digitalWrite(led4, HIGH);
+}
+// Condition for the fifth led
+if (i % 32 > 15) {
+  digitalWrite(led5, HIGH);
 }
 ```
-The wiring for this problem is:
-![WiringBinaryCounter](wiringBinaryCounter.png)
-
 
 #### Visualising binary numbers with 7-segment display
 Using a 7-segment display, it is much easier to understand and interpret a binary number or input.
@@ -149,64 +112,36 @@ The 7-segment display is essentially 7 separate LEDs which when combinated in sp
 To create a 7 segment display:
 Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See the image below for further details.
 ![sevenSegmentDisplay](sevenSegmentDisplay.jpg)
+*Figure X: The 7 parts of the 7 segment display, the table for the inputs/outputs and the K-map tables for the first 3 lights*
 
-The code for the 7 segment display is as follows.
+The code for the logic equations used in the lights for the 7 segment display is as follows. Light A, B and C directly correlate to the 
 ```.c
-int butA = 13;
-int butB = 12;
-int butC = 11;
-int outA = 2;
-int outB = 3;
-int outC = 4;
-int outD = 5;
-int outE = 6;
-int outF = 7;
-int outG = 8;
+// Define the input as simpler variables
+A = digitalRead(butA);
+B = digitalRead(butB);
+C = digitalRead(butC);
 
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(butA, INPUT);
-  pinMode(butB, INPUT);
-  pinMode(butC, INPUT);
-  pinMode(outA, OUTPUT);
-  pinMode(outB, OUTPUT);
-  pinMode(outC, OUTPUT);
-  pinMode(outD, OUTPUT);
-  pinMode(outE, OUTPUT);
-  pinMode(outF, OUTPUT);
-  pinMode(outG, OUTPUT);
-}
-
-bool A = 0;
-bool B = 0;
-bool C = 0;
-
-void loop()
-{
-  // Define the input as simpler variables
-  A = digitalRead(butA);
-  B = digitalRead(butB);
-  C = digitalRead(butC);
-  
-  // Light A
-  digitalWrite(outA, B || (C && A) || (!C && !A));
-  // Light B
-  digitalWrite(outB, !A || (!B && !C) || (C && B));
-  // Light C
-  digitalWrite(outC, C || (!C && !B) || (A && B));
-  // Light D
-  digitalWrite(outD, (!C && !A) || (B && !C) || (B && !A) || (A && C && !B));
-  // Light E
-  digitalWrite(outE, (!A && !C) || (B && !C));
-  // Light F
-  digitalWrite(outF, (A && !B) || (A && !C) || (!C && !B));
-  // Light G
-  digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
-}
+// Light A
+digitalWrite(outA, B || (C && A) || (!C && !A));
+// Light B
+digitalWrite(outB, !A || (!B && !C) || (C && B));
+// Light C
+digitalWrite(outC, C || (!C && !B) || (A && B));
+// Light D
+digitalWrite(outD, (!C && !A) || (B && !C) || (B && !A) || (A && C && !B));
+// Light E
+digitalWrite(outE, (!A && !C) || (B && !C));
+// Light F
+digitalWrite(outF, (A && !B) || (A && !C) || (!C && !B));
+// Light G
+digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
 ```
 
-The logical equations were found using the K-map tables. The first 3 tables are shown in the picture above.
+The logical equations were found using the K-map tables. The first 3 tables are shown in figure X, with the associated equations. The only difference, and the way I converted from an equation to code, is the replacement of the **"+"** with a **||** and a **"\*"** with a **&&**.
+
+The finished product is shown in figure X:
+![finished7segment](sevenSegmentFinished.gif)
+*Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.
 
 
 Evaluation
