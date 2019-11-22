@@ -73,9 +73,12 @@ if (i % 32 > 15) {
   digitalWrite(led5, HIGH);
 }
 ```
-The important part here is how the output is decided, as can be seen in the conditionals in the if-statements. It is decided based on the remainder of the power of 2 after dividing by a specific value. For example:
+The important part here is how the output is decided, as can be seen in the conditionals in the if-statements required to count from 0 to 31 with binary. It is decided based on the remainder of the power of 2 after dividing by a specific value. For example:
 
-
+If the remainder of the number divided by 2^1 is 1, the first light is on (the number is odd). 
+If the remainder of the number divided by 2^2 is greater than 1 ((2^2)/2 - 1), the second light is on. 
+If the remainder of the number divided by 2^3 is greater than 4 ((2^3)/2 - 1), the third light is on. 
+And so forth.
 
 ### To-do
 * Build a binary counter with the physical arduino
