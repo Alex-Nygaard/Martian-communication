@@ -141,7 +141,7 @@ The logical equations were found using the K-map tables. The first 3 tables are 
 
 The finished product is shown in figure X:
 ![sevenSegmentFInished](sevenSegmentFInished.gif)
-*Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.
+*Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
 
 
 Evaluation
