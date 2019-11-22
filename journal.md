@@ -219,3 +219,21 @@ Thu. 21. Nov
 * None
 
 
+Fri. 22. Nov
+------------------
+### Tasks done
+* Finished 7 segment display
+** Troubleshooting complete, cables sorted and code fixed
+* Worked on repo for unit 2
+
+### To-do
+* Use feedback from Dr. Pinzo to improve repo: Only use code snippets (of challenging concepts or things i learned), not full code for a program
+
+### What did i learn
+* The importance of cable management
+* How to better include code in my repo (see feedback)
+
+### Questions
+* None
+
+
