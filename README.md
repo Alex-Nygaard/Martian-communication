@@ -140,7 +140,7 @@ digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
 The logical equations were found using the K-map tables. The first 3 tables are shown in figure X, with the associated equations. The only difference, and the way I converted from an equation to code, is the replacement of the **"+"** with a **||** and a **"\*"** with a **&&**.
 
 The finished product is shown in figure X:
-![finished7segment](sevenSegmentFinished.gif)
+![sevenSegmentFInished](sevenSegmentFInished.gif)
 *Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.
 
 
