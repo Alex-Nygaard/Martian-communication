@@ -199,4 +199,23 @@ Fri. 22. Nov
 ### Questions
 * None
 
+Mon. 4. Nov
+------------------
+### Tasks done
+* Discussed the input method (2 buttons to english text)
+* Created the registration og inputs with buttons on tinkercad
+
+### To-do
+* Conclude best strategy for letter choice
+* Code and build prototype, first with serial monitor as output then LCD display
+
+### What did i learn
+* How to cite sources on a repo
+* About Human centered design
+* Pros and cons of, and the choice between better usability vs efficiency
+
+### Questions
+* What should one prioritise for this project, usability and simplicity or efficiency and speed?
+
+
 
