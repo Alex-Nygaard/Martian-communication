@@ -145,7 +145,61 @@ The logical equations were found using the K-map tables. The first 3 tables are 
 
 The finished product is shown in figure X:
 ![sevenSegmentFInished](sevenSegmentFInished.gif)
+
 *Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
+
+
+#### Input method to English
+A part of the context of the problem was that the stations only knew English, thus they have to input their messages with the english alphabet. The input method is constrained to the user only having 2 buttons. Using those two buttons, a message would have to be crafted, and potentially containing all 26 letters, 0-9 digits, " " space and a send and delete action.
+
+The buttons are labeled A and B.
+
+* When **button A** is pressed, the selection in focus is changed, through a rotation in a list. 
+* If **button B** is pressed, the character or action is selected, and catenated to the final word. 
+“SEND” and “DEL” are actions. 
+
+A central part of this program is a pre-made function accompanying the arduino programming language: `attachInterrupt()`
+`attachInterrupt(PIN, FUNCTION, MODE)` executes a function when a change on the specified port takes place.
+The function takes the three arguments
+* PIN - The pin which registers an interruption. On the Arduino UNO, port 2 corresponds to the value 0 and port 3 corresponds to the value 1
+* FUNCTION - The function to be executed when an interruption is detected
+* MODE - Determines what type of interruption is required to trigger the function. These can be:
+    - LOW to trigger the interrupt whenever the pin is low,
+    - CHANGE to trigger the interrupt whenever the pin changes value
+    - RISING to trigger when the pin goes from low to high
+    - FALLING for when the pin goes from high to low
+
+
+This function is implemented in the input program as follows:
+```.c
+void setup()
+{
+  Serial.begin(9600);
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+}
+```
+
+In addition, it is essential to understand how the program deals with the action SEND and DEL. This part of the program is dealt with in the if/else if statement below:
+```.c
+// If DEL key is selected, remove last appended char to text
+if (key == "DEL") {
+  int len = text.length();
+  text.remove(len-1);
+} 
+// If SEND is selected, reset the text variable to ""
+else if (key == "SEND") {
+  Serial.println("Message sent");
+  text  = "";
+
+} else {
+  text += key; // Append char to message
+}
+```
+
+When **DEL** is selected, `text.remove(len-1);` is executed. This removes the character on the index of the length of the word decremented by one (deletes the last added character).
+When **SEND** is selected, `Serial.println("Message sent");` is executed and the message is "sent" (later improvements will ensure that the message is either displayed on an LCD or sent to another station). The variable `text` is also reset to an empty string. 
+The **default case** is that the character in selection is appended to the string of the message (`text`).
 
 
 Evaluation
