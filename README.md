@@ -28,23 +28,34 @@ Another challenge is the fact that none of the people involved know morse or bin
 The last requirement of the system is that the input method of English characters to create the message only uses **2 push buttons**. 
 
 To evaluate how successfull our solution is, a series a success criterias must be created. These are as follows:
-1. The system has an easy to use user interface on all parts
-1. The messages are translated flawslessly between the languages
-1. The messages are transmitted flawlessly between the source and receiver
+1. The system is easy to install
+1. The system has an simple to use user interface on all parts
+1. Messages can be easily be input from English
+1. The messages are translated flawslessly to morse and back
+1. The messages are translated flawslessly to binary and back
+1. The messages are transmitted flawlessly between the source and receiver - with no data loss
+
+To evaluate the quality of this program, one must utilize a test plan to check the success criteria:
+
+| Test plan                                                                                      | Input | Output | Check |
+|------------------------------------------------------------------------------------------------|-------|--------|-------|
+| 1. Software is easy to install                                                                 |       |        |       |
+| 2. The system has an simple to use user interface on all parts                                 |       |        |       |
+| 3. Messages can be easily be input from English                                                |       |        |       |
+| 4. The messages are translated flawslessly to morse and back                                   |       |        |       |
+| 5. The messages are translated flawslessly to binary and back                                  |       |        |       |
+| 6. The messages are transmitted flawlessly between the source and receiver - with no data loss |       |        |       |
+
+The input and output will be filled out when the project is more finalized and thus tested at the end.
 
 
 Design
 ----------
 
-A visualization of the flow of information looks like this:
+A visualization of the flow of information and various stations looks like this:
 ![PlanetDiagram](planetDiagram.png)
 
-
-
-Development
-----------
-
-The most important and challenging part of the development is the translation, inbetween English, morse and binary. Before this task can be accomplished, it is important to understand the essence of both morse and binary communication, which I have broken down in progressive steps.
+This program will be created with two principles in mind - **Usability** and **Human Centered Design**
 
 #### Definition of usability
 1. Usability is *"the fact of something being easy to use, or the degree to which it is easy to use"* [1]
@@ -55,6 +66,12 @@ The most important and challenging part of the development is the translation, i
 According to Wikipedia.com, Human Centered Design is *"an approach to interactive systems development that aims to make systems usable and useful by focusing on the users, their needs and requirements, and by applying human factors/ergonomics, usability knowledge, and techniques. This approach enhances effectiveness and efficiency, improves human well-being, user satisfaction, accessibility and sustainability; and counteracts possible adverse effects of use on human health, safety and performance."* [3]
 
 Another source describing this process being put to use first-hand can be found from source [4] . This source especially discusses the principles of desing, including discoverability and feedback.
+
+
+Development
+----------
+
+The most important and challenging part of the development is the translation, inbetween English, morse and binary. Before this task can be accomplished, it is important to understand the essence of both morse and binary communication, which I have broken down in progressive steps.
 
 
 ### Communication with binary.
