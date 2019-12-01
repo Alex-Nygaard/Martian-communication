@@ -66,7 +66,10 @@ The components included are marked by the pink number on the left, and are indiv
 1. The message in either binary or morse form is translated back into english
 1. The english message is received by the station
 
-*Note: In some cases, the earth and mars will communicate between eachother, and prefer independant communication from the moon station. The message must be relayed via the moon, however the program on the moon could be altered to detect if the message is to be forwarded immediately, without reading it. In this case, the translated message from either mars or the earth (in english, received by the moon), could be used as an input from the moon and thus sent to the relevant party.
+*Note: In some cases, the earth and mars will communicate between eachother, and prefer independant communication from the moon station. The message must be relayed via the moon, however the program on the moon could be altered to detect if the message is to be forwarded immediately, without reading it. In this case, the translated message from either mars or the earth (in english, received by the moon), could be used as an input from the moon and thus sent to the relevant party.*
+
+
+
 
 
 This program will be created with two principles in mind - **Usability** and **Human Centered Design**
