@@ -238,6 +238,7 @@ The **default case** is that the character in selection is appended to the strin
 Evaluation
 ----------
 
+Will be added when a finished product is ready to be evaluated.
 
 
 
@@ -245,11 +246,13 @@ Evaluation
 Improvements
 ----------
 
+Will be added when a finished product is ready to be evaluated.
 
 
 
 
 Bibliography
+
 [1] : "Usability" from the Cambridge Business English Dictionary. Retrieved 25. Nov 2019 from https://dictionary.cambridge.org/dictionary/english/usability.
 [2] : "Usability" from Techopedia. Retrieved 25. Nov 2019 from https://www.techopedia.com/definition/4919/usability.
 [3] : "Human-centered design." Wikipedia contributors, Wikipedia, The Free Encyclopedia, last updated 3 Nov. 2019. Accessed 25. Nov 2019 from https://en.wikipedia.org/wiki/Human-centered_design.
