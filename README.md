@@ -55,6 +55,20 @@ Design
 A visualization of the flow of information and various stations looks like this:
 ![PlanetDiagram](planetDiagram.png)
 
+The system diagram for this project will be:
+![systemDiagram](systemDiagramUnit2.jpg)
+
+The components included are marked by the pink number on the left, and are individually explained below:
+1. The english string is the message that should be sent. A destination should also be specified
+1. The input method is the 2 button character selector. This part is explained and documented in detail in the development section
+1. At this stage, the english (with color green) message is translated into the relevant "language", depending on where the message will be sent
+1. The message is sent and transmitted, and received by the relevant station
+1. The message in either binary or morse form is translated back into english
+1. The english message is received by the station
+
+*Note: In some cases, the earth and mars will communicate between eachother, and prefer independant communication from the moon station. The message must be relayed via the moon, however the program on the moon could be altered to detect if the message is to be forwarded immediately, without reading it. In this case, the translated message from either mars or the earth (in english, received by the moon), could be used as an input from the moon and thus sent to the relevant party.
+
+
 This program will be created with two principles in mind - **Usability** and **Human Centered Design**
 
 #### Definition of usability
@@ -66,7 +80,6 @@ This program will be created with two principles in mind - **Usability** and **H
 According to Wikipedia.com, Human Centered Design is *"an approach to interactive systems development that aims to make systems usable and useful by focusing on the users, their needs and requirements, and by applying human factors/ergonomics, usability knowledge, and techniques. This approach enhances effectiveness and efficiency, improves human well-being, user satisfaction, accessibility and sustainability; and counteracts possible adverse effects of use on human health, safety and performance."* [3]
 
 Another source describing this process being put to use first-hand can be found from source [4] . This source especially discusses the principles of desing, including discoverability and feedback.
-
 
 Development
 ----------
