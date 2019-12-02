@@ -199,7 +199,7 @@ Fri. 22. Nov
 ### Questions
 * None
 
-Mon. 4. Nov
+Mon. 25. Nov
 ------------------
 ### Tasks done
 * Discussed the input method (2 buttons to english text)
@@ -217,5 +217,18 @@ Mon. 4. Nov
 ### Questions
 * What should one prioritise for this project, usability and simplicity or efficiency and speed?
 
+Mon. 2. Dec
+------------------
+### Tasks done
+* Created table for every input symbol with corresponding binary values
 
+### To-do
+* Create a program that converts english symbols to binary (either with if tests or some other method)
+
+### What did i learn
+* 
+
+### Questions
+* How should we convert the characters to binary?
+* Are there any premade functions for this?
 
