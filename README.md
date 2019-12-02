@@ -27,6 +27,11 @@ Another challenge is the fact that none of the people involved know morse or bin
 
 The last requirement of the system is that the input method of English characters to create the message only uses **2 push buttons**. 
 
+#### Justification
+Why we are doing what we are doing
+
+
+
 To evaluate how successfull our solution is, a series a success criterias must be created. These are as follows:
 1. The system is easy to install
 1. The system has an simple to use user interface on all parts
