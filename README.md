@@ -225,7 +225,13 @@ void setup()
 }
 ```
 
-In addition, it is essential to understand how the program deals with the action **SEND** and **DEL**. This part of the program is dealt with in the if/else if statement below:
+In addition, it is essential to understand how the program deals with the action **SEND** and **DEL**. This part of the program is dealt with in the if/else if statement below. See figure 6 for the flowchart of the algorithm.
+
+![flowchart2ButtonInput](flowchart2ButtonInput.jpg)
+
+*Figure 6: Flowchart of the input using the 2 buttons. This flowchart handles the actions, and the default case (explained below)*
+
+A snippet of the code looks like this:
 ```.c
 // If DEL key is selected, remove last appended char to text
 if (key == "DEL") {
