@@ -25,11 +25,17 @@ The communication method is alse very limited between the 3 different stations. 
 
 Another challenge is the fact that none of the people involved know morse or binary by heart, meaning all communication has to be translated to and from English, and be received as English as well.
 
-The last requirement of the system is that the input method of English characters to create the message only uses **2 push buttons**. 
+The last requirement of the system is that the input method of English characters to create the message only uses **2 push buttons**.
+
+### Solution
+Our final product will be an interconnected system of 3 arduinos in 3 separate locations capable of both translation and transmission. Each "station" will have a functional arduino with 2 input buttons, for which the station can create a message (consisting of letters, numbers and " " space) and send to the desired destination (another station). The arduino will send that message through either radio contact or light pulses (representing either the binary or the morse). The translation structure will happen between english, morse and binary (see system diagram below, figure 2).
 
 #### Justification
-Why we are doing what we are doing
 
+**Choosing Arduino**
+As most programming languages, bash and the arduino (C) programming languages have many similarities and differences. There are plenty of pros and cons for both. For example, bash is highly useful for scripting, that is running code directly from the terminal to perform simple and repetitive tasks. This high level of integration in the terminal gives the user alot of control over the system being used. Bash also has a rich collection of tutorials and examples online, because it is so widely adopted. However, bash's syntax is quite unsatisfactory. It is rather unnecessarily complicated which often leads to errors for small mistakes of little relevance. The most important con, however, is that the bash language can only be run in specific environments, which do not include the arduino hardware. The arduino language, which is closely built upon the C programming language, on the other hand, also has its pros and cons. First of all, I must mention that C has almost become an industry standard, with it being recommended that every professional programmer has a good understanding of the language. The C language is also a bit lower level, meaning that it is closer to the computer hardware. That means that the programmer is required to deal with and learn about the low-level workings of a computer (memory management, pointers, etc.) Also, Cs relative simplicity and longevity have lead to it being very optimized and fast too. However, it is not nearly as simple syntax-wise compared to other very high level languages.
+
+In conclusion, both these languages have many strong and weak sides. And frankly, it is qutie hard to compare because they serve different purposes, with bash being a shell environment and arduino C being a common and widespread programming language. Both function very well for their intended tasks, given that the programmer overcomes the learning barrier in regards to the syntax required. When choosing a language for this project, there was one obvious choice however; arduino C. The reason for this is the hardware requirements, functionality and usability. Using an arduino is a wise choice because of the rich documentation online, in addition to the relative cheap price with it still being very suitable for our small project.
 
 
 To evaluate how successfull our solution is, a series a success criterias must be created. These are as follows:
@@ -59,9 +65,11 @@ Design
 
 A visualization of the flow of information and various stations looks like this:
 ![PlanetDiagram](planetDiagram.png)
+*Figure 1: Visualization of the simulated stations.*
 
 The system diagram for this project will be:
 ![systemDiagram](systemDiagramUnit2.jpg)
+*Figure 2: A system diagram illustrating the communication between the stations. The arrows are color coded to represent the language in which the information is sent.*
 
 The components included are marked by the pink number on the left, and are individually explained below:
 1. The english string is the message that should be sent. A destination should also be specified
@@ -72,9 +80,6 @@ The components included are marked by the pink number on the left, and are indiv
 1. The english message is received by the station
 
 *Note: In some cases, the earth and mars will communicate between eachother, and prefer independant communication from the moon station. The message must be relayed via the moon, however the program on the moon could be altered to detect if the message is to be forwarded immediately, without reading it. In this case, the translated message from either mars or the earth (in english, received by the moon), could be used as an input from the moon and thus sent to the relevant party.*
-
-
-
 
 
 This program will be created with two principles in mind - **Usability** and **Human Centered Design**
@@ -114,6 +119,7 @@ And so forth...
 
 **To convert a number from decimal to binary, the flowchart below must be used:**
 ![flowchartDecToBin](decimalToBinaryFlowchart.jpg)
+*Figure 3: Flowchart describing the process of converting the decimal number to binary. Note: This program prints the LSB (Least significant bit, to the far right) first.*
 
 
 #### Counting to 31, with decimal input to binary output
@@ -146,15 +152,16 @@ if (i % 32 > 15) {
   digitalWrite(led5, HIGH);
 }
 ```
+This code illustrates that relationship between the bits and the remainder of the division (explained also above the code).
 
 #### Visualising binary numbers with 7-segment display
 Using a 7-segment display, it is much easier to understand and interpret a binary number or input.
 The 7-segment display is essentially 7 separate LEDs which when combinated in specific ways create the illusion of decimal numbers. More can be read on https://en.wikipedia.org/wiki/Seven-segment_display
 
 To create a 7 segment display:
-Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See the image below for further details.
+Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See figure 4 below for further details.
 ![sevenSegmentDisplay](sevenSegmentDisplay.jpg)
-*Figure X: The 7 parts of the 7 segment display, the table for the inputs/outputs and the K-map tables for the first 3 lights*
+*Figure 4: The 7 parts of the 7 segment display, the table for the inputs/outputs and the K-map tables for the first 3 lights*
 
 The code for the logic equations used in the lights for the 7 segment display is as follows. Light A, B and C directly correlate to the 
 ```.c
@@ -184,7 +191,7 @@ The logical equations were found using the K-map tables. The first 3 tables are 
 The finished product is shown in figure X:
 ![sevenSegmentFInished](sevenSegmentFInished.gif)
 
-*Figure x: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
+*Figure 5: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
 
 
 #### Input method to English
@@ -218,7 +225,7 @@ void setup()
 }
 ```
 
-In addition, it is essential to understand how the program deals with the action SEND and DEL. This part of the program is dealt with in the if/else if statement below:
+In addition, it is essential to understand how the program deals with the action **SEND** and **DEL**. This part of the program is dealt with in the if/else if statement below:
 ```.c
 // If DEL key is selected, remove last appended char to text
 if (key == "DEL") {
