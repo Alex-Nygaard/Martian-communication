@@ -232,3 +232,80 @@ Mon. 2. Dec
 * How should we convert the characters to binary?
 * Are there any premade functions for this?
 
+Tue 10. Dec
+------------------
+### Tasks done
+* Divided into separate groups for each individual station. My group is on the moon, including Khalid, Lydia and me.
+* Divided tasks and priorities (see picture below)
+![moonPriorities](moonPriorities.jpeg)
+
+* Researched and concluded on computational representation of morse code (see picture below)
+![morseCode](morseCodePlanning.jpeg)
+
+### To-do
+* Create program that converts binary input to english
+* Create tables for english to morse
+* Create presentation for CPU architecture in arduino and modern PC
+
+### What did i learn
+* Developed skills in planning and decision making. I feel like i took charge of the process of deciding priorities
+
+### Questions
+* None
+
+Wed 11. Dec
+------------------
+### Tasks done
+* Presented CPU architecture presentation
+* Worked on program for binary to english conversion
+
+### To-do
+* Finish program
+
+### What did i learn
+* Interruptions
+* String vs array in C
+* Using a switch statement
+* Problem solving (logical and syntax problems)
+
+### Questions
+* None
+
+Thu 12. Dec
+------------------
+### Tasks done
+* Completed binary to english system
+
+### To-do
+* 
+
+### What did i learn
+* 
+
+### Questions
+* What other programs do we need to make this a complete product?
+* How do we combine all these programs to run as a single file on one arduino?
+* ^ If not applicable, will we run several different interchangable sketches on the arduino?
+
+Fri 13. Dec
+------------------
+### Tasks done
+* Watched netflix documentary on coding - the past, present and future
+* Introduced to IA assignment
+
+### To-do
+* Work on project over winter break
+
+### What did i learn
+* Eclectic programming languages
+* Development and evolution of programming - from binary switches to machine learning
+* Ethical implications of being a programmer
+
+### Questions
+* How broad should the IA be?
+* What should the final result look like?
+
+
+
+
+
