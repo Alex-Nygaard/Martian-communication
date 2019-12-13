@@ -252,6 +252,26 @@ When **DEL** is selected, `text.remove(len-1);` is executed. This removes the ch
 When **SEND** is selected, `Serial.println("Message sent");` is executed and the message is "sent" (later improvements will ensure that the message is either displayed on an LCD or sent to another station). The variable `text` is also reset to an empty string. 
 The **default case** is that the character in selection is appended to the string of the message (`text`).
 
+#### Binary to english
+An essential part of this system is translating from binary to english, which will be how the moon and mars communicate between eachother. The stations will use light signals to communicate messages, which will have to be input manually by the user. This input will happen through the two buttons already used for the english input system (see previous section). One button will represent a 0, and one will represent a 1. The binary values will only require 6 bits to represent all the 37 characters, which include:
+
+* Numbers 0-9 (000000-001001)
+* Letters A-Z (001010-100011)
+* Space " " (100100)
+
+The program will continuously receive inputs from the user in form of button presses. When 6 bits are registered, the corresponding character is added to a final message string. To concatenate two strings in arduino C, one can simply use: `msg += "G";`.
+
+Checking what character to add involves using 37 else if statements, with the first three using this structure:
+```.c
+if (character == "000000") {
+  msg += "0";
+} else if (character == "000001") {
+  msg += "1";
+} else if (character == "000010") {
+  msg += "2";
+```
+It is important to note that the variable `msg` is of the type `String`, which is specific to the arduino variation of C. The ordinary C language does not include this type.
+
 
 Evaluation
 ----------
