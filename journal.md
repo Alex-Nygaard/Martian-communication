@@ -323,6 +323,24 @@ Mon 6. Dec
 ### Questions
 * Will we use the LCD display?
 
+Wed 8. Dec
+------------------
+### Tasks done
+* Worked on programming practice tasks in C (see folder in repository)
+
+### To-do
+* 
+
+### What did i learn
+* Syntax of C
+* Computational thinking
+
+### Questions
+* What sort of applications is C good for?
+
+
+
+
 
 
 
