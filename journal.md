@@ -306,6 +306,24 @@ Fri 13. Dec
 * What should the final result look like?
 
 
+Mon 6. Dec
+------------------
+### Tasks done
+* Refreshed outselves on the project
+* Documented what tasks are done, and whats missing on a google doc
+
+### To-do
+* Integrate communication and input methods (blinking lights and pushing buttons)
+* LCD Display?
+* Assemble all the relevant finished programs on the individual arduinos
+
+### What did i learn
+* Importance of planning
+
+### Questions
+* Will we use the LCD display?
+
+
 
 
 
