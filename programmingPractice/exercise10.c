@@ -35,12 +35,23 @@ void main() {
 
   charge = consum * chargePerUnit;
 
-  surcharge = charge * 0.15;
+
+  printf("Amount Charges @Rs. %f per unit: %f\n", chargePerUnit, charge);
+
+  if (charge > 400) {
+    surcharge = charge * 0.15;
+  } else {
+    surcharge = 0;
+  }
+  
+  printf("Surcharge amount %f\n", surcharge);
 
   total = charge + surcharge;
 
-  printf("Amount Charges @Rs. %f per unit: %f\n", chargePerUnit, charge);
-  printf("Surcharge amount %f\n", surcharge);
-  printf("Net amount paid by the customer: %f\n", total);
+  if (total < 100) {
+    total = 100;
+  }
 
+  printf("Net amount paid by the customer: %f\n", total);
 }
+
