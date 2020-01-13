@@ -338,7 +338,26 @@ Wed 8. Dec
 ### Questions
 * What sort of applications is C good for?
 
+Mon 13. Jan
+------------------
+### Tasks done
+* "The machine cycle" task
+* Watched video on microarchitecture
+* Worked on ram-management, including registers, opcode, addresses, data, and operations
 
+### To-do
+* Working on Unit 2 project
+
+### What did i learn
+* Plenty about machine architecture. Specifically:
+* Structure of ram
+* Addressing data, and retrieving it
+* Fetch, execute and decode phase
+* Control unit operations
+* 4 options of actions, such as add to register A, add to register B, add reg. A and B together, and storing back in ram
+
+### Questions
+* 
 
 
 
