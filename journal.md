@@ -359,6 +359,39 @@ Mon 13. Jan
 ### Questions
 * 
 
+Tue 21. Jan
+------------------
+### Tasks done
+* Coding challenge, looping through lists in C
+* Worked on Unit project
+* Kahoot on machine hardware
+
+### To-do
+* Finish unit project
+
+### What did i learn
+* Difficulties of C types
+
+### Questions
+* How does strings in C work
+
+Wed 22. Jan
+------------------
+### Tasks done
+* Worked on project
+* Helped other groups, esp english-binary
+
+### To-do
+* Finish project + repo
+
+### What did i learn
+* Find index of strings in C
+
+### Questions
+* 
+
+
+
 
 
 
