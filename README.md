@@ -193,6 +193,9 @@ The finished product is shown in figure X:
 
 *Figure 5: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
 
+#### Working with strings
+
+
 
 #### Input method to English
 A part of the context of the problem was that the stations only knew English, thus they have to input their messages with the english alphabet. The input method is constrained to the user only having 2 buttons. Using those two buttons, a message would have to be crafted, and potentially containing all 26 letters, 0-9 digits, " " space and a send and delete action.
@@ -271,6 +274,14 @@ if (character == "000000") {
   msg += "2";
 ```
 It is important to note that the variable `msg` is of the type `String`, which is specific to the arduino variation of C. The ordinary C language does not include this type.
+
+#### Using the LCD display
+The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
+* `lcd.setCursor(col, row)` - Sets the position at which text is printed. Columns and rows have a starting index of 0. Thus, (0,1) will put the cursor on the second row and ready to print text from the first character space.
+* `lcd.print(text)` - Prints the given string to the display, which each character taking one of the 16 columns.
+* `lcd.clear();` - Clears the display to the default blank screen.
+
+Further official documentation on the library can be found ![here](https://www.arduino.cc/en/Reference/LiquidCrystal).
 
 
 Evaluation
