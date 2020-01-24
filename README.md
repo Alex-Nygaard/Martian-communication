@@ -281,8 +281,11 @@ The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows
 * `lcd.print(text)` - Prints the given string to the display, which each character taking one of the 16 columns.
 * `lcd.clear();` - Clears the display to the default blank screen.
 
-Further official documentation on the library can be found ![here](https://www.arduino.cc/en/Reference/LiquidCrystal).
+Further official documentation on the library can be found [here](https://www.arduino.cc/en/Reference/LiquidCrystal).
 
+![lcd_photo](lcd_photo.png)
+
+*Figure X: This photo shows the LCD display and its text-printing abilities.
 
 Evaluation
 ----------
