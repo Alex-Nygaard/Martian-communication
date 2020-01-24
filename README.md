@@ -303,12 +303,28 @@ It is important to note that the variable `msg` is of the type `String`, which i
 ![FCbinToEng](FCbinToEng.jpg)
 *Figure X: Shows the logical flow of the program that converts binary to english*
 
+#### English to binary
+This program was created by Kelven Kai, all credit goes to him.
+
+The flowchart is as follows:
+![engToBinKELVEN](FCengToBin.jpg)
+*Figure X: Flowchart for the english to binary translation*
+
 #### Morse to English
 This program was created by Lydia Etherington, all credit goes to her.
 
 The flowchart is as follows:
 ![FCmorseToEng](FCmorseToEng.jpg)
 *Figure X: Flowchart for the morse to english translation*
+
+#### English to morse
+This program was created by Chinomnso Okechukwu, all credit goes to him.
+
+The flowchart is as follows:
+![FCengToMorse](FCmorseToEng.jpg)
+*Figure X: Flowchart for the english to morse translation*
+
+
 
 Evaluation
 ----------
