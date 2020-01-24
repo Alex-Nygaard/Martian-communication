@@ -215,6 +215,7 @@ The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns and 2 r
 Further official documentation on the library can be found [here](https://www.arduino.cc/en/Reference/LiquidCrystal).
 
 ![lcd_photo](lcd_photo.png)
+
 *Figure 7: This photo shows the LCD display and its text-printing abilities.*
 
 #### Input method to English
@@ -277,7 +278,7 @@ The **default case** is that the character in selection is appended to the strin
 
 #### Binary to english
 
-**My main responsibility of this project was to create the Binary og English system.**
+*My main responsibility of this project was to create the Binary og English system.*
 
 An essential part of this system is translating from binary to english, which will be how the moon and mars communicate between eachother. The stations will use light signals to communicate messages, which will have to be input manually by the user. This input will happen through the two buttons already used for the english input system (see previous section). One button will represent a 0, and one will represent a 1. The binary values will only require 6 bits to represent all the 37 characters, which include:
 
