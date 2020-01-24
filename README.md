@@ -194,8 +194,25 @@ The finished product is shown in figure X:
 *Figure 5: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
 
 #### Working with strings
+While working on this project, I discovered that strings are in general not a part of the C programming language. Text in C is rather represented by character (char) arrays. However, the arduino extention of the C programming language has included code that makes working with text much easier. In the arduino language, strings are easily created and flexible to work with. An example of a coding challenge I met while working with strings was iterating through a string to get individual characters. A sample code of how this is done is as follows:
+```.c
+String text = "abcdefg"; // String is a special class/type in arduino C
 
-
+// text.length() returns the length of the string text
+for (int i = 0; i < text.length(); i++) {
+  Serial.println(text[i]); // Prints the i-th character of the string, starting from index 0.
+}
+```
+With the output being:
+```.c
+a
+b
+c
+d
+e
+f
+g
+```
 
 #### Input method to English
 A part of the context of the problem was that the stations only knew English, thus they have to input their messages with the english alphabet. The input method is constrained to the user only having 2 buttons. Using those two buttons, a message would have to be crafted, and potentially containing all 26 letters, 0-9 digits, " " space and a send and delete action.
@@ -256,6 +273,9 @@ When **SEND** is selected, `Serial.println("Message sent");` is executed and the
 The **default case** is that the character in selection is appended to the string of the message (`text`).
 
 #### Binary to english
+
+**My main responsibility of this project was to create the Binary og English system.**
+
 An essential part of this system is translating from binary to english, which will be how the moon and mars communicate between eachother. The stations will use light signals to communicate messages, which will have to be input manually by the user. This input will happen through the two buttons already used for the english input system (see previous section). One button will represent a 0, and one will represent a 1. The binary values will only require 6 bits to represent all the 37 characters, which include:
 
 * Numbers 0-9 (000000-001001)
@@ -275,6 +295,11 @@ if (character == "000000") {
 ```
 It is important to note that the variable `msg` is of the type `String`, which is specific to the arduino variation of C. The ordinary C language does not include this type.
 
+**The flowchart for this program is as follows:**
+![FCbinToEng](FCbinToEng.jpg)
+*Figure X: Shows the logical flow of the program that converts binary to english*
+
+
 #### Using the LCD display
 The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
 * `lcd.setCursor(col, row)` - Sets the position at which text is printed. Columns and rows have a starting index of 0. Thus, (0,1) will put the cursor on the second row and ready to print text from the first character space.
@@ -285,7 +310,7 @@ Further official documentation on the library can be found [here](https://www.ar
 
 ![lcd_photo](lcd_photo.png)
 
-*Figure X: This photo shows the LCD display and its text-printing abilities.
+*Figure X: This photo shows the LCD display and its text-printing abilities.*
 
 Evaluation
 ----------
