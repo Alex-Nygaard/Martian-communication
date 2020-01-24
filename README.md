@@ -334,7 +334,7 @@ To evalute the succcess of our solution and the implementation of this solution,
 
 ![testPlanFINISHED](testPlanFINISHED.png)
 
-The evidence for this can be found in 5 different videos located in a Google Drive folder already shared with Dr. Pinzon.
+The evidence for this can be found in 4 different videos located in a Google Drive folder already shared with Dr. Pinzon.
 The link can also be found [here](https://drive.google.com/drive/folders/1GP54CQTwInArqjo29mlwqzjRytWH70al?usp=sharing).
 
 #### Issues with testing
