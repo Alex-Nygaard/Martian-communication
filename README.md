@@ -321,7 +321,8 @@ The flowchart is as follows:
 This program was created by Chinomnso Okechukwu, all credit goes to him.
 
 The flowchart is as follows:
-![FCengToMorse](FCengToMorse.jpg)
+![FCengToMorse](FCengToMorse-1.jpg)
+![FCengToMorse](FCengToMorse-2.jpg)
 *Figure X: Flowchart for the english to morse translation*
 
 
