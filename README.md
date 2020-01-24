@@ -330,8 +330,20 @@ The flowchart is as follows:
 Evaluation
 ----------
 
-Will be added when a finished product is ready to be evaluated.
+To evalute the succcess of our solution and the implementation of this solution, one must re-examine the success criteria specified at the top of this repository. When examining these success criteria, it is also essential to consider the test plan which is located at the same location. After walking through the steps outlined in the test plan and conducting following the instructions in regards to the input, the desired output was achieved. The completed test plan including the check-list will therefore look as follows:
 
+![testPlanFINISHED](testPlanFINISHED.png)
+
+The evidence for this can be found in 5 different videos located in a Google Drive folder already shared with Dr. Pinzon.
+The link can also be found [here](https://drive.google.com/drive/folders/1GP54CQTwInArqjo29mlwqzjRytWH70al?usp=sharing).
+
+#### Issues with testing
+
+While testing the various functionalities of the system, we encountered a few issues. While most of these were eventually resolved, I would nonetheless like to mention the problems and how we took action to fix them.
+
+First of all, we had a severe issue with the input buttons. When pressing the buttons while conducting a test, it often occurred that the button behaved abnormally. For example, when pressing once, the arduino might not register a tap, or it might register 2 or 3 presses. This was extremely problematic, as it severely slowed down the testing process, while also rasing the level of irritation among me and my peers significantly. Some quick research explained that it was an issue originates from the construction of the button itself, and is referred to as *"bounciness"*. We found an article explaining the problem and a possible solution. Due to time constraints, we were not able to implement this solution. However, we managed to finish the testing regardless of the problem. A link with more information about this issue can be found [here](https://www.programmingelectronics.com/tutorial-19-debouncing-a-button-with-arduino-old-version/).
+
+A second problem we encountered during the testing process was incompatibility of the various programs and arduinos. While developing our own code, we had failed to communicate at a high enough degree, such that for example the ports used on the arduinos were different, in addition to the ports specified in the code. Nonetheless, this did not cause too much trouble. Changing the ports of each individual program for multiple different arduinos worked well, however it was far from the ideal solution. Thus, a greater focus on cross-department communication next time would be beneficial.
 
 
 
