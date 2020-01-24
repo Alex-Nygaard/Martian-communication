@@ -323,7 +323,16 @@ Will be added when a finished product is ready to be evaluated.
 Improvements
 ----------
 
-Will be added when a finished product is ready to be evaluated.
+There are several improvements that could be added to further better this system. These are a few suggestions of potential "upgrades", which I also believe to be quite realistic:
+
+* Multiple light bulbs - An easy improvement to the system would be to add a lightbulb to the transmitting arduinos. This lightbulb could have multiple purposes, but would serve as a way to increase the rate of data transmission or make sure less data is lost. An example of a use case for an additional bulb could be using it as a reference timer, having it blink on or off every second. This is useful because to receive the information one must have a certain awareness of time. Both dots and dashes from morse and bits from binary all have a specific time length. Thus using an additional bulb to monitor the timing would help in understanding exactly the information that's been sent.
+
+* Different transmission - The current method of transmission of information, blinking lights, is highly inefficient and very vulnerable for data loss. In addition, it is unrealistic when looking at the situation - astronauts would not send light signals between planets, it is done with radio waves. Thus, equipping the arduinos with powerful radio transmitters would improve range (further reach + able to transmit through obstacles, does not require clear path), reliability (less data loss, especially by eliminating the human factor), efficiency (more information per second), etc.
+
+* Combining programs - At the current state, the software and code that runs the basic operations of our system (translation, transmission) are divided into separate individual programs. This is a disadvantage, because each station should only have one arduino. This means that when the functionality of the arduino needs to be switched (ex. from translating to transmission), the program must be reuploaded, costing valuable time. This problem could easily be avoided by combining the programs to create three master programs, one for each station (the stations would of course need to remain different). Thus, when switching on the arduino, the user could be prompted with a choice to choose either the translation functionality or the transmission functionality.
+
+
+
 
 
 
