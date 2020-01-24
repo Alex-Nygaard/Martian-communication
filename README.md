@@ -48,16 +48,8 @@ To evaluate how successfull our solution is, a series a success criterias must b
 
 To evaluate the quality of this program, one must utilize a test plan to check the success criteria:
 
-| Test plan                                                                                      | Input | Output | Check |
-|------------------------------------------------------------------------------------------------|-------|--------|-------|
-| 1. Software is easy to install                                                                 |       |        |       |
-| 2. The system has an simple to use user interface on all parts                                 |       |        |       |
-| 3. Messages can be easily be input from English                                                |       |        |       |
-| 4. The messages are translated flawslessly to morse and back                                   |       |        |       |
-| 5. The messages are translated flawslessly to binary and back                                  |       |        |       |
-| 6. The messages are transmitted flawlessly between the source and receiver - with no data loss |       |        |       |
-
-The input and output will be filled out when the project is more finalized and thus tested at the end.
+![test_plan](testPlan.png)
+*Figure X: Test plan with inputs and outputs*
 
 
 Design
