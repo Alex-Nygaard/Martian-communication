@@ -46,10 +46,10 @@ To evaluate how successfull our solution is, a series a success criterias must b
 1. The messages are translated flawslessly to binary and back
 1. The messages are transmitted flawlessly between the source and receiver - with no data loss
 
-To evaluate the quality of this program, one must utilize a test plan to check the success criteria:
+These points of success can be broken down into specific practical parts of the system functionality, thus the product can easily be evaluated. To evaluate the quality of this system, one must utilize a test plan to check the success criteria:
 
 ![test_plan](testPlan.png)
-*Figure X: Test plan with inputs and outputs*
+*Figure 1: Test plan with inputs and outputs*
 
 
 Design
@@ -57,11 +57,11 @@ Design
 
 A visualization of the flow of information and various stations looks like this:
 ![PlanetDiagram](planetDiagram.png)
-*Figure 1: Visualization of the simulated stations.*
+*Figure 2: Visualization of the simulated stations.*
 
 The system diagram for this project will be:
 ![systemDiagram](systemDiagramUnit2.jpg)
-*Figure 2: A system diagram illustrating the communication between the stations. The arrows are color coded to represent the language in which the information is sent.*
+*Figure 3: A system diagram illustrating the communication between the stations. The arrows are color coded to represent the language in which the information is sent.*
 
 The components included are marked by the pink number on the left, and are individually explained below:
 1. The english string is the message that should be sent. A destination should also be specified
@@ -109,9 +109,9 @@ And so forth...
 1. Add all these results together to find the decimal result
 
 
-**To convert a number from decimal to binary, the flowchart below must be used:**
+**To convert a number from decimal to binary, the flowchart below must be used. See figure 4:**
 ![flowchartDecToBin](decimalToBinaryFlowchart.jpg)
-*Figure 3: Flowchart describing the process of converting the decimal number to binary. Note: This program prints the LSB (Least significant bit, to the far right) first.*
+*Figure 4: Flowchart describing the process of converting the decimal number to binary. Note: This program prints the LSB (Least significant bit, to the far right) first.*
 
 
 #### Counting to 31, with decimal input to binary output
@@ -151,9 +151,9 @@ Using a 7-segment display, it is much easier to understand and interpret a binar
 The 7-segment display is essentially 7 separate LEDs which when combinated in specific ways create the illusion of decimal numbers. More can be read on https://en.wikipedia.org/wiki/Seven-segment_display
 
 To create a 7 segment display:
-Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See figure 4 below for further details.
+Arrange 7 lights in the pattern shown in the picture below, inside the 7 different line segments. To find the output of each light, the binary input of the 3 buttons must be used to create logical equations for the output. The table in the picture shows the state (on/off) of each light for every number. The tables (K-map tables) are used to determine the equations for each light by using logic gates, that can later be implemented into the code. See figure 5 below for further details.
 ![sevenSegmentDisplay](sevenSegmentDisplay.jpg)
-*Figure 4: The 7 parts of the 7 segment display, the table for the inputs/outputs and the K-map tables for the first 3 lights*
+*Figure 5: The 7 parts of the 7 segment display, the table for the inputs/outputs and the K-map tables for the first 3 lights*
 
 The code for the logic equations used in the lights for the 7 segment display is as follows. Light A, B and C directly correlate to the 
 ```.c
@@ -180,10 +180,10 @@ digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
 
 The logical equations were found using the K-map tables. The first 3 tables are shown in figure X, with the associated equations. The only difference, and the way I converted from an equation to code, is the replacement of the **"+"** with a **||** and a **"\*"** with a **&&**.
 
-The finished product is shown in figure X:
+The finished product is shown in figure 6:
 ![sevenSegmentFInished](sevenSegmentFInished.gif)
 
-*Figure 5: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
+*Figure 6: Gif showcasing the final result of the display. Here all the numbers 0-7 are showcased, more or less in order.*
 
 #### Working with strings
 While working on this project, I discovered that strings are in general not a part of the C programming language. Text in C is rather represented by character (char) arrays. However, the arduino extention of the C programming language has included code that makes working with text much easier. In the arduino language, strings are easily created and flexible to work with. An example of a coding challenge I met while working with strings was iterating through a string to get individual characters. A sample code of how this is done is as follows:
@@ -207,7 +207,7 @@ g
 ```
 
 #### Using the LCD display
-The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
+The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns and 2 rows, see figure 7) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
 * `lcd.setCursor(col, row)` - Sets the position at which text is printed. Columns and rows have a starting index of 0. Thus, (0,1) will put the cursor on the second row and ready to print text from the first character space.
 * `lcd.print(text)` - Prints the given string to the display, which each character taking one of the 16 columns.
 * `lcd.clear();` - Clears the display to the default blank screen.
@@ -215,8 +215,7 @@ The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows
 Further official documentation on the library can be found [here](https://www.arduino.cc/en/Reference/LiquidCrystal).
 
 ![lcd_photo](lcd_photo.png)
-
-*Figure X: This photo shows the LCD display and its text-printing abilities.*
+*Figure 7: This photo shows the LCD display and its text-printing abilities.*
 
 #### Input method to English
 A part of the context of the problem was that the stations only knew English, thus they have to input their messages with the english alphabet. The input method is constrained to the user only having 2 buttons. Using those two buttons, a message would have to be crafted, and potentially containing all 26 letters, 0-9 digits, " " space and a send and delete action.
@@ -249,11 +248,11 @@ void setup()
 }
 ```
 
-In addition, it is essential to understand how the program deals with the action **SEND** and **DEL**. This part of the program is dealt with in the if/else if statement below. See figure 6 for the flowchart of the algorithm.
+In addition, it is essential to understand how the program deals with the action **SEND** and **DEL**. This part of the program is dealt with in the if/else if statement below. See figure 8 for the flowchart of the algorithm.
 
 ![flowchart2ButtonInput](flowchart2ButtonInput.jpg)
 
-*Figure 6: Flowchart of the input using the 2 buttons. This flowchart handles the actions, and the default case (explained below)*
+*Figure 8: Flowchart of the input using the 2 buttons. This flowchart handles the actions, and the default case (explained below)*
 
 A snippet of the code looks like this:
 ```.c
@@ -299,31 +298,31 @@ if (character == "000000") {
 ```
 It is important to note that the variable `msg` is of the type `String`, which is specific to the arduino variation of C. The ordinary C language does not include this type.
 
-**The flowchart for this program is as follows:**
+**The flowchart for this program is as follows in figure 9:**
 ![FCbinToEng](FCbinToEng.jpg)
-*Figure X: Shows the logical flow of the program that converts binary to english*
+*Figure 9: Shows the logical flow of the program that converts binary to english*
 
 #### English to binary
 This program was created by Kelven Kai, all credit goes to him.
 
-The flowchart is as follows:
+The flowchart is as follows in figure 10:
 ![engToBinKELVEN](FCengToBin.jpg)
-*Figure X: Flowchart for the english to binary translation*
+*Figure 10: Flowchart for the english to binary translation*
 
 #### Morse to English
 This program was created by Lydia Etherington, all credit goes to her.
 
-The flowchart is as follows:
+The flowchart is as follows in figure 11:
 ![FCmorseToEng](FCmorseToEng.jpg)
-*Figure X: Flowchart for the morse to english translation*
+*Figure 11: Flowchart for the morse to english translation*
 
 #### English to morse
 This program was created by Chinomnso Okechukwu, all credit goes to him.
 
-The flowchart is as follows:
+The flowchart is as follows in figure 12:
 ![FCengToMorse](FCengToMorse-1.jpg)
 ![FCengToMorse](FCengToMorse-2.jpg)
-*Figure X: Flowchart for the english to morse translation*
+*Figure 12: Flowchart for the english to morse translation*
 
 
 
