@@ -206,6 +206,18 @@ f
 g
 ```
 
+#### Using the LCD display
+The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
+* `lcd.setCursor(col, row)` - Sets the position at which text is printed. Columns and rows have a starting index of 0. Thus, (0,1) will put the cursor on the second row and ready to print text from the first character space.
+* `lcd.print(text)` - Prints the given string to the display, which each character taking one of the 16 columns.
+* `lcd.clear();` - Clears the display to the default blank screen.
+
+Further official documentation on the library can be found [here](https://www.arduino.cc/en/Reference/LiquidCrystal).
+
+![lcd_photo](lcd_photo.png)
+
+*Figure X: This photo shows the LCD display and its text-printing abilities.*
+
 #### Input method to English
 A part of the context of the problem was that the stations only knew English, thus they have to input their messages with the english alphabet. The input method is constrained to the user only having 2 buttons. Using those two buttons, a message would have to be crafted, and potentially containing all 26 letters, 0-9 digits, " " space and a send and delete action.
 
@@ -291,18 +303,12 @@ It is important to note that the variable `msg` is of the type `String`, which i
 ![FCbinToEng](FCbinToEng.jpg)
 *Figure X: Shows the logical flow of the program that converts binary to english*
 
+#### Morse to English
+This program was created by Lydia Etherington, all credit goes to her.
 
-#### Using the LCD display
-The LCD (Liquid Crystal Display) is a 16x2 character display (16 columns, 2 rows) that displays characters and numbers. It is enabled by a library of code that helps developers take advantage of the functionalities of the screen. This library is included into an arduino program with the `#include <LiquidCrystal.h>` term. To initialize the display, one must specify the 5 ports at which it connects (ex. `LiquidCrystal lcd(13, 12, 11, 10, 9, 8)`) and use the method `lcd.begin(16,2)` to specify the dimensions. The most common functionality of the screen, and the methods and functions we utilize is as follows.
-* `lcd.setCursor(col, row)` - Sets the position at which text is printed. Columns and rows have a starting index of 0. Thus, (0,1) will put the cursor on the second row and ready to print text from the first character space.
-* `lcd.print(text)` - Prints the given string to the display, which each character taking one of the 16 columns.
-* `lcd.clear();` - Clears the display to the default blank screen.
-
-Further official documentation on the library can be found [here](https://www.arduino.cc/en/Reference/LiquidCrystal).
-
-![lcd_photo](lcd_photo.png)
-
-*Figure X: This photo shows the LCD display and its text-printing abilities.*
+The flowchart is as follows:
+![FCmorseToEng](FCmorseToEng.jpg)
+*Figure X: Flowchart for the morse to english translation*
 
 Evaluation
 ----------
